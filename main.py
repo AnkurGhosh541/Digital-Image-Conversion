@@ -1,6 +1,5 @@
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
 
 
 def get_color_channels(img):
@@ -79,26 +78,23 @@ def rotate_image(grey_img):
 
 
 if __name__ == '__main__':
-    image = cv2.imread("images/1.2.jpg")
+    image = cv2.imread("PATH/TO/IMAGE")
 
-    # rChan, gChan, bChan = get_color_channels(image)
+    rChan, gChan, bChan = get_color_channels(image)
 
-    # grey_image = grey_conversion(rChan, gChan, bChan)
-    # negative_grey_image = negative_grey_conversion(grey_image)
-    # negative_color_image = negative_color_conversion(rChan, gChan, bChan, image)
-    # rotated_image = rotate_image(grey_image)
+    grey_image = grey_conversion(rChan, gChan, bChan)
+    negative_grey_image = negative_grey_conversion(grey_image)
+    negative_color_image = negative_color_conversion(rChan, gChan, bChan, image)
+    rotated_image = rotate_image(grey_image)
 
-    # nrChan, ngChan, nbChan = get_color_channels(negative_color_image)
-    # new_negative_img = negative_color_conversion(nrChan, ngChan, nbChan, negative_color_image)
+    nrChan, ngChan, nbChan = get_color_channels(negative_color_image)
+    new_negative_img = negative_color_conversion(nrChan, ngChan, nbChan, negative_color_image)
 
-    # cv2.imshow("Grey Image", grey_image)
-    # cv2.imshow("Negative Grey Image", negative_grey_image)
-    # cv2.imshow("Negative Color Image", negative_color_image)
-    # cv2.imshow("Normal image", new_negative_img)
-    # cv2.imshow("Rotated Grey Image", rotated_image)
-
-    # plt.imshow(image)
-    # plt.show()
+    cv2.imshow("Grey Image", grey_image)
+    cv2.imshow("Negative Grey Image", negative_grey_image)
+    cv2.imshow("Negative Color Image", negative_color_image)
+    cv2.imshow("Normal image", new_negative_img)
+    cv2.imshow("Rotated Grey Image", rotated_image)
 
     cv2.waitKey(0)
     cv2.destroyAllWindows()
