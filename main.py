@@ -11,7 +11,7 @@ from ycbcr import *
 
 
 if __name__ == '__main__':
-    image = cv2.imread("images/1.2.jpg")
+    image = cv2.imread("/PATH/TO/IMAGE")
     b, g, r = get_color_channels(image)
     grey_image = grey_conversion(b, g, r)
 
